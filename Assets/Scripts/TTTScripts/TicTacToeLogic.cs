@@ -16,8 +16,19 @@ public class TicTacToeLogic : MonoBehaviour
         }
     }
 
+    //temp
+    bool temp = true;
     public void DoTurn(GameObject currCell)
     {
-        
+        if(temp)
+        {
+            Instantiate(CrossPrefab, currCell.transform.position, new Quaternion());
+            temp = false;
+        }
+        else
+        {
+            Instantiate(CirclePrefab, currCell.transform.position, new Quaternion());
+            temp = true;
+        }   
     }
 }

@@ -6,8 +6,13 @@ public class Cell : MonoBehaviour, ITTTCell
 
     public GameObject PlaceForFigure { get; set; }
 
+    private bool busy = false;
     public void Interaction()
     {
-        Logic.DoTurn(gameObject);
+        if(!busy)
+        {
+            Logic.DoTurn(gameObject);
+            busy = true;
+        } 
     }
 }
